@@ -1,0 +1,11 @@
+services:
+  go-server:
+    # image: golang
+    build: ./server
+    ports:
+      - "5000:5000"
+    volumes:
+      # Map the ./server directory 
+      # with the /app workdir in the container
+      - ./server:/app
+    command: ["tail", "-f", "/dev/null"]
